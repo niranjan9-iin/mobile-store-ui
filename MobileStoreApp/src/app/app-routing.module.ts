@@ -4,15 +4,33 @@ import { AddAdminComponent } from './pages/admin/add-admin/add-admin.component';
 import { AdminAddMobileComponent } from './pages/admin/admin-add-mobile/admin-add-mobile.component';
 import { AdminHomeComponent } from './pages/admin/admin-home/admin-home.component';
 import { AdminViewAllOrdersComponent } from './pages/admin/admin-view-all-orders/admin-view-all-orders.component';
+import { HomeComponent } from './pages/home/home.component';
 import { AdminComponent } from './pages/layouts/admin/admin.component';
 import { BasicComponent } from './pages/layouts/basic/basic.component';
 import { CustomerLayoutComponent } from './pages/layouts/customer-layout/customer-layout.component';
+import { LoginComponent } from './pages/login/login.component';
+import { RegisterComponent } from './pages/register/register.component';
+import { UserCartComponent } from './pages/user/user-cart/user-cart.component';
 import { UserHomeComponent } from './pages/user/user-home/user-home.component';
+import { UserOrdersComponent } from './pages/user/user-orders/user-orders.component';
 
 
 const routes: Routes = [{
   path: '',
-  component: BasicComponent
+  component: BasicComponent,
+  children: [
+    {
+      path: '',
+      component: HomeComponent
+    },
+    {
+      path: 'login',
+      component: LoginComponent
+    }, {
+      path: 'register',
+      component: RegisterComponent
+    }
+  ]
 }, {
   path: 'user',
   component: CustomerLayoutComponent,
@@ -20,6 +38,12 @@ const routes: Routes = [{
     {
       path: '',
       component: UserHomeComponent
+    }, {
+      path: 'cart',
+      component: UserCartComponent
+    }, {
+      path: 'orders-view',
+      component: UserOrdersComponent
     }
   ]
 }, {

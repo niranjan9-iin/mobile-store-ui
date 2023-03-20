@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { MobileStoreService } from 'src/app/service/mobile-store.service';
 
 @Component({
   selector: 'app-view-mobiles',
@@ -6,10 +7,33 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./view-mobiles.component.scss']
 })
 export class ViewMobilesComponent implements OnInit {
-
-  constructor() { }
+  @Input()
+  role: string
+  mobilesList = [{
+    "battety": 0,
+    "category": {
+      "categoryId": 0,
+      "categoryName": "string"
+    },
+    "comeraPixcel": 0,
+    "companyName": "string",
+    "mfDate": "string",
+    "mobileCost": 0,
+    "mobileId": 0,
+    "mobileName": "string",
+    "mobileRAM": 0,
+    "modelNumber": "string"
+  }]
+  constructor(private service: MobileStoreService) { }
 
   ngOnInit() {
+    //this.viewMobiles();
   }
 
+  public viewMobiles() {
+    this.service.retrieveMobiles().subscribe(res => {
+      console.log(res);
+
+    })
+  }
 }

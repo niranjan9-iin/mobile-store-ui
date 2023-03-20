@@ -6,5 +6,9 @@ import { HttpClient } from '@angular/common/http';
 })
 export class MobileStoreService {
 
-  constructor(private http:HttpClient) { }
+  constructor(public http:HttpClient) { }
+
+  public retrieveMobiles() {
+    return this.http.get('http://localhost:8080/mobile/getAll');
+  }
 }

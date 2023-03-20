@@ -1,1 +1,29 @@
-<p>view-mobiles works!</p>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <h3>Mobiles list</h3><hr>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr class="table-primary">
+                            <th>Mobile Id</th>
+                            <th>Mobile Name</th>
+                            <th>Brand</th>
+                            <th>RAM</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of mobilesList">
+                            <td>{{item?.mobileId}}</td>
+                            <td>{{item?.mobileName}}</td>
+                            <td>{{item?.companyName}}</td>
+                            <td>{{item?.mobileRAM}}</td>
+                            <td>{{item?.mobileCost | currency : "INR" : "symbol"}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

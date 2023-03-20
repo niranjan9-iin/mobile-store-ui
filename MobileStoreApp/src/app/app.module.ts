@@ -12,6 +12,14 @@ import { AddAdminComponent } from './pages/admin/add-admin/add-admin.component';
 import { ViewMobilesComponent } from './common/view-mobiles/view-mobiles.component';
 import { AdminHomeComponent } from './pages/admin/admin-home/admin-home.component';
 import { UserHomeComponent } from './pages/user/user-home/user-home.component';
+import { MobileStoreService } from './service/mobile-store.service';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { HomeComponent } from './pages/home/home.component';
+import { LoginComponent } from './pages/login/login.component';
+import { RegisterComponent } from './pages/register/register.component';
+import { UserCartComponent } from './pages/user/user-cart/user-cart.component';
+import { UserOrdersComponent } from './pages/user/user-orders/user-orders.component';
 
 @NgModule({
   declarations: [
@@ -24,13 +32,20 @@ import { UserHomeComponent } from './pages/user/user-home/user-home.component';
     AddAdminComponent,
     ViewMobilesComponent,
     AdminHomeComponent,
-    UserHomeComponent
+    UserHomeComponent,
+    HomeComponent,
+    LoginComponent,
+    RegisterComponent,
+    UserCartComponent,
+    UserOrdersComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    FormsModule,
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [MobileStoreService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
