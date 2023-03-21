@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MobileStoreService } from 'src/app/service/mobile-store.service';
 import { APP_NAME } from 'src/constants';
 
 @Component({
@@ -8,9 +9,11 @@ import { APP_NAME } from 'src/constants';
 })
 export class CustomerLayoutComponent implements OnInit {
   APP_NAME= APP_NAME;
-  constructor() { }
+  constructor(public service:MobileStoreService) { }
 
   ngOnInit() {
   }
-
+  onLogout(){
+    this.service.onLogout();
+  }
 }

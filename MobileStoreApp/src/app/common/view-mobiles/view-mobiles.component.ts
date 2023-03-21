@@ -9,31 +9,17 @@ import { MobileStoreService } from 'src/app/service/mobile-store.service';
 export class ViewMobilesComponent implements OnInit {
   @Input()
   role: string
-  mobilesList = [{
-    "battety": 0,
-    "category": {
-      "categoryId": 0,
-      "categoryName": "string"
-    },
-    "comeraPixcel": 0,
-    "companyName": "string",
-    "mfDate": "string",
-    "mobileCost": 0,
-    "mobileId": 0,
-    "mobileName": "string",
-    "mobileRAM": 0,
-    "modelNumber": "string"
-  }]
+  mobilesList
   constructor(private service: MobileStoreService) { }
 
   ngOnInit() {
-    //this.viewMobiles();
+    let token=sessionStorage.getItem('mobile-auth-token');
+    this.viewMobiles(token);
   }
 
-  public viewMobiles() {
-    this.service.retrieveMobiles().subscribe(res => {
-      console.log(res);
-
+  public viewMobiles(token) {
+    this.service.retrieveMobiles(token).subscribe(res => {
+      this.mobilesList=res;
     })
   }
 }

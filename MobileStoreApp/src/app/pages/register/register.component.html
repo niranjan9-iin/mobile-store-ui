@@ -1,1 +1,61 @@
-<p>register works!</p>
+<div class="container-fluid">
+    <div class="row" style="justify-content: center;">
+        <div class="col-4 centered">
+            <div class="card mt-3">
+                <div class="card-body">
+                    <form class="form" #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)" [noValidate]="false">
+                        <div style="display: flex;">
+                            <div class="form-group mb-2 pr-1">
+                                <label for="name">Name</label>
+                                <input type="text" class="form-control" name="name" [(ngModel)]="name" required>
+                            </div>
+                            <div class="form-group mb-2">
+                                <label for="username">Username</label>
+                                <input type="text" class="form-control" name="username" [(ngModel)]="username" required>
+                            </div>
+                        </div>
+                        <div style="display: flex;">
+                            <div class="form-group mb-2 pr-1">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" name="emailId" [(ngModel)]="emailId" required>
+                            </div>
+                            <div class="form-group mb-2">
+                                <label for="mobileNumber">Mobile Number</label>
+                                <input type="text" class="form-control" name="mobileNumber" [(ngModel)]="mobileNumber" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group mb-2">
+                            <label for="address">Address</label>
+                            <input type="text" class="form-control" name="address" [(ngModel)]="address" required>
+                        </div>
+                        <div class="form-group mb-2">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" name="password" [(ngModel)]="password" required>
+                        </div>
+                        <div class="form-group mb-2">
+                            <label for="cpassword">Confirm Password</label>
+                            <input type="password" class="form-control" name="cpassword" [(ngModel)]="cpassword" required>
+                        </div>
+                        <div class="mb-2" style="display: flex;">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="role" id="exampleRadios1" value="User" [(ngModel)]="role" required>
+                                <label class="form-check-label" for="exampleRadios1">
+                                  Customer
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="role" id="exampleRadios2" value="Admin" [(ngModel)]="role" required>
+                                <label class="form-check-label" for="exampleRadios2">
+                                 Admin
+                                </label>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
