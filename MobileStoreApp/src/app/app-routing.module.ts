@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AddAdminComponent } from './pages/admin/add-admin/add-admin.component';
 import { AdminAddMobileComponent } from './pages/admin/admin-add-mobile/admin-add-mobile.component';
 import { AdminHomeComponent } from './pages/admin/admin-home/admin-home.component';
 import { AdminViewAllOrdersComponent } from './pages/admin/admin-view-all-orders/admin-view-all-orders.component';
@@ -53,10 +52,6 @@ const routes: Routes = [{
     {
       path: '',
       component: AdminHomeComponent
-    },
-    {
-      path: 'add-admin',
-      component: AddAdminComponent
     }
     ,
     {
