@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AddCategoryComponent } from './pages/admin/add-category/add-category.component';
 import { AdminAddMobileComponent } from './pages/admin/admin-add-mobile/admin-add-mobile.component';
 import { AdminHomeComponent } from './pages/admin/admin-home/admin-home.component';
 import { AdminViewAllOrdersComponent } from './pages/admin/admin-view-all-orders/admin-view-all-orders.component';
@@ -61,6 +62,10 @@ const routes: Routes = [{
     {
       path: 'add-mobile',
       component: AdminAddMobileComponent
+    },
+    {
+      path: 'add-category',
+      component: AddCategoryComponent
     }
   ]
 }];

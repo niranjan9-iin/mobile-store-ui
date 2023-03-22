@@ -13,12 +13,11 @@ export class ViewMobilesComponent implements OnInit {
   constructor(private service: MobileStoreService) { }
 
   ngOnInit() {
-    let token=sessionStorage.getItem('mobile-auth-token');
-    this.viewMobiles(token);
+    this.viewMobiles();
   }
 
-  public viewMobiles(token) {
-    this.service.retrieveMobiles(token).subscribe(res => {
+  public viewMobiles() {
+    this.service.retrieveMobiles().subscribe(res => {
       this.mobilesList=res;
     })
   }

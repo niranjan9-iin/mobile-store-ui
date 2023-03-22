@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { MobileStoreService } from 'src/app/service/mobile-store.service';
 
 @Component({
   selector: 'app-admin-add-mobile',
@@ -7,12 +8,23 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./admin-add-mobile.component.scss']
 })
 export class AdminAddMobileComponent implements OnInit {
-  constructor() { }
-
+  constructor(public service: MobileStoreService) { }
+  categoryObjectList: any;
   ngOnInit() {
+    this.getAllCategories();
   }
 
-  onSubmit(ngForm: NgForm) {
-    console.log(ngForm.value);
+  onAddMobile(ngForm: NgForm) {
+    this.service.addMobile(ngForm.value).subscribe(res => {
+      alert('Mobile successfully added!');
+    }, error => {
+      alert('Error occured while adding mobile');
+    })
+  }
+
+  getAllCategories() {
+    this.service.getAllCategories().subscribe(res => {
+      this.categoryObjectList = res;
+    })
   }
 }
