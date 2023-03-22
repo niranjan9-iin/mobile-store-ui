@@ -7,7 +7,6 @@ import { CustomerLayoutComponent } from './pages/layouts/customer-layout/custome
 import { AdminComponent } from './pages/layouts/admin/admin.component';
 import { BasicComponent } from './pages/layouts/basic/basic.component';
 import { AdminAddMobileComponent } from './pages/admin/admin-add-mobile/admin-add-mobile.component';
-import { AdminViewAllOrdersComponent } from './pages/admin/admin-view-all-orders/admin-view-all-orders.component';
 import { ViewMobilesComponent } from './common/view-mobiles/view-mobiles.component';
 import { AdminHomeComponent } from './pages/admin/admin-home/admin-home.component';
 import { UserHomeComponent } from './pages/user/user-home/user-home.component';
@@ -28,7 +27,6 @@ import { AddCategoryComponent } from './pages/admin/add-category/add-category.co
     BasicComponent,
     CustomerLayoutComponent,
     AdminAddMobileComponent,
-    AdminViewAllOrdersComponent,
     ViewMobilesComponent,
     AdminHomeComponent,
     UserHomeComponent,

@@ -3,7 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { AddCategoryComponent } from './pages/admin/add-category/add-category.component';
 import { AdminAddMobileComponent } from './pages/admin/admin-add-mobile/admin-add-mobile.component';
 import { AdminHomeComponent } from './pages/admin/admin-home/admin-home.component';
-import { AdminViewAllOrdersComponent } from './pages/admin/admin-view-all-orders/admin-view-all-orders.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AdminComponent } from './pages/layouts/admin/admin.component';
 import { BasicComponent } from './pages/layouts/basic/basic.component';
@@ -53,11 +52,6 @@ const routes: Routes = [{
     {
       path: '',
       component: AdminHomeComponent
-    }
-    ,
-    {
-      path: 'view-orders',
-      component: AdminViewAllOrdersComponent
     },
     {
       path: 'add-mobile',

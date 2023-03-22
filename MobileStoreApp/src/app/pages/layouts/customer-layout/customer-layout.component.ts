@@ -13,7 +13,9 @@ export class CustomerLayoutComponent implements OnInit {
 
   ngOnInit() {
   }
-  onLogout(){
-    this.service.onLogout();
+  onLogout() {
+    if (confirm('Are you sure want to Logout?')) {
+      this.service.onLogout();
+    }
   }
 }
