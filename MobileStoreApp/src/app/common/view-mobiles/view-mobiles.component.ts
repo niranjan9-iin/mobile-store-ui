@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { MobileStoreService } from 'src/app/service/mobile-store.service';
 
 @Component({
@@ -10,7 +11,7 @@ export class ViewMobilesComponent implements OnInit {
   @Input()
   role: string
   mobilesList
-  constructor(private service: MobileStoreService) { }
+  constructor(private service: MobileStoreService, private router:Router) { }
 
   ngOnInit() {
     this.viewMobiles();
@@ -20,5 +21,9 @@ export class ViewMobilesComponent implements OnInit {
     this.service.retrieveMobiles().subscribe(res => {
       this.mobilesList=res;
     })
+  }
+  editMobileInfo(item) {
+    console.log(item);
+    this.router.navigate(['admin/edit-mobile', item.mobileId]);
   }
 }

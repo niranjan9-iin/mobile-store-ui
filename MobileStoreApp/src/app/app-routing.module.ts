@@ -1,8 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AdminAuthGuard } from './guards/admin-auth.guard';
+import { AuthGuard } from './guards/auth.guard';
 import { AddCategoryComponent } from './pages/admin/add-category/add-category.component';
 import { AdminAddMobileComponent } from './pages/admin/admin-add-mobile/admin-add-mobile.component';
 import { AdminHomeComponent } from './pages/admin/admin-home/admin-home.component';
+import { EditMobileInfoComponent } from './pages/admin/edit-mobile-info/edit-mobile-info.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AdminComponent } from './pages/layouts/admin/admin.component';
 import { BasicComponent } from './pages/layouts/basic/basic.component';
@@ -32,6 +35,7 @@ const routes: Routes = [{
   ]
 }, {
   path: 'user',
+  canActivate: [AuthGuard],
   component: CustomerLayoutComponent,
   children: [
     {
@@ -47,6 +51,7 @@ const routes: Routes = [{
   ]
 }, {
   path: 'admin',
+  canActivate: [AdminAuthGuard],
   component: AdminComponent,
   children: [
     {
@@ -60,6 +65,9 @@ const routes: Routes = [{
     {
       path: 'add-category',
       component: AddCategoryComponent
+    },{
+      path: 'edit-mobile/:id',
+      component: EditMobileInfoComponent
     }
   ]
 }];

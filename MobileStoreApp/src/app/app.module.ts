@@ -19,6 +19,7 @@ import { RegisterComponent } from './pages/register/register.component';
 import { UserCartComponent } from './pages/user/user-cart/user-cart.component';
 import { UserOrdersComponent } from './pages/user/user-orders/user-orders.component';
 import { AddCategoryComponent } from './pages/admin/add-category/add-category.component';
+import { EditMobileInfoComponent } from './pages/admin/edit-mobile-info/edit-mobile-info.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { AddCategoryComponent } from './pages/admin/add-category/add-category.co
     RegisterComponent,
     UserCartComponent,
     UserOrdersComponent,
-    AddCategoryComponent
+    AddCategoryComponent,
+    EditMobileInfoComponent
   ],
   imports: [
     BrowserModule,

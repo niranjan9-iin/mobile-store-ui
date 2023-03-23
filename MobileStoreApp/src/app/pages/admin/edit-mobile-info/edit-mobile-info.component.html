@@ -3,68 +3,68 @@
         <div class="row">
             <div class="col-md-8 offset-md-2">
                 <div class="card">
-                    <h3>Add new Mobile</h3>
+                    <h3>Edit Mobile Information</h3>
                     <hr>
-                    <form #addMobileForm="ngForm" (ngSubmit)="onAddMobile(addMobileForm)" [noValidate]="false">
+                    <form #editMobileForm="ngForm" (ngSubmit)="updateMobileInfo(editMobileForm)" [noValidate]="false">
                         <div class="row">
                             <div class="col-4 mt-3">
                                 <div class="form-group">
                                     <label>Mobile Name</label>
-                                    <input type="text" class="form-control" ngModel name="mobileName" required>
+                                    <input type="text" class="form-control" [(ngModel)]="mobileObject.mobileName" name="mobileName" required>
                                 </div>
                             </div>
                             <div class="col-4 mt-3">
                                 <div class="form-group">
                                     <label>Mobile Brand</label>
-                                    <input type="text" class="form-control" ngModel name="companyName" required>
+                                    <input type="text" class="form-control" [(ngModel)]="mobileObject.companyName" name="companyName" required>
                                 </div>
                             </div>
                             <div class="col-4 mt-3">
                                 <div class="form-group">
                                     <label>Camera Pixel</label>
-                                    <input type="number" class="form-control" ngModel name="cameraPixcel" required>
+                                    <input type="number" class="form-control" [(ngModel)]="mobileObject.cameraPixcel" name="cameraPixcel" required>
                                 </div>
                             </div>
                             <div class="col-4 mt-3">
                                 <div class="form-group">
                                     <label>Price</label>
-                                    <input type="number" step="0.01" class="form-control" ngModel name="mobileCost" required>
+                                    <input type="number" step="0.01" class="form-control" [(ngModel)]="mobileObject.mobileCost" name="mobileCost" required>
                                 </div>
                             </div>
                             <div class="col-4 mt-3">
                                 <div class="form-group">
                                     <label>Battery</label>
-                                    <input type="text" class="form-control" ngModel name="battery" required>
+                                    <input type="text" class="form-control" [(ngModel)]="mobileObject.battery" name="battery" required>
                                 </div>
                             </div>
                             <div class="col-4 mt-3">
                                 <div class="form-group">
                                     <label>Manufacturing date</label>
-                                    <input type="date" class="form-control" ngModel name="mfDate" required>
+                                    <input type="date" class="form-control" [(ngModel)]="mobileObject.mfDate" name="mfDate" required>
                                 </div>
                             </div>
                             <div class="col-4 mt-3">
                                 <div class="form-group">
                                     <label>RAM</label>
-                                    <input type="number" class="form-control" ngModel name="mobileRAM" required>
+                                    <input type="number" class="form-control" [(ngModel)]="mobileObject.mobileRAM" name="mobileRAM" required>
                                 </div>
                             </div>
                             <div class="col-4 mt-3">
                                 <div class="form-group">
                                     <label>Model Number</label>
-                                    <input type="text" class="form-control" ngModel name="modelNumber" required>
+                                    <input type="text" class="form-control" [(ngModel)]="mobileObject.modelNumber" name="modelNumber" required>
                                 </div>
                             </div>
                             <div class="col-4 mt-3">
                                 <div class="form-group">
                                     <label>Select Category</label>
-                                    <select class="form-select" ngModel name="category" placeholder="select" required>
+                                    <select class="form-select" [(ngModel)]="mobileObject.category" name="category" placeholder="select" required>
                                         <option *ngFor="let cat of categoryObjectList" [ngValue]="cat">{{cat.categoryName}}</option>
                                     </select>
                                 </div>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-outline-primary mt-3">Add Mobile</button>
+                        <button type="submit" class="btn btn-outline-primary mt-3">Save changes</button>
                     </form>
                 </div>
             </div>

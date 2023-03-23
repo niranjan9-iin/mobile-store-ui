@@ -26,12 +26,26 @@ export class MobileStoreService {
     return this.http.post(hostUrl + 'mobile/add', requestBody, this.createAuthHeaders(this.getSessionToken()));
   }
 
-  public addCategory(requestBody){
+  public addCategory(requestBody) {
     return this.http.post(hostUrl + 'admin/category/add', requestBody, this.createAuthHeaders(this.getSessionToken()));
   }
 
   public getAllCategories() {
     return this.http.get(hostUrl + 'admin/category/get/all', this.createAuthHeaders(this.getSessionToken()));
+  }
+
+  public showMobileById(id) {
+    return this.http.get(hostUrl + 'mobile/get/' + id, this.createAuthHeaders(this.getSessionToken()));
+  }
+  public updateMobileInfo(requestBody) {
+    return this.http.put(hostUrl+'mobile/update',requestBody,this.createAuthHeaders(this.getSessionToken()));
+  }
+
+  public isUserLoggedIn() {
+    return sessionStorage.getItem('SESSION_USER') === 'User';
+  }
+  public isAdminLoggedIn() {
+    return sessionStorage.getItem('SESSION_USER') === 'Admin';
   }
   
   public onLogout() {
@@ -49,7 +63,7 @@ export class MobileStoreService {
     return options;
   }
 
-  getSessionToken() {    
+  getSessionToken() {
     return sessionStorage.getItem(authToken);
   }
 }

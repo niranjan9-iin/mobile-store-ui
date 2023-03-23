@@ -18,8 +18,10 @@ export class LoginComponent implements OnInit {
     this.service.login(ngform.value).subscribe((res:any) => {
       sessionStorage.setItem('mobile-auth-token',res.token);
       if(res.role==='[User]'){
+        sessionStorage.setItem('SESSION_USER','User');
         this.router.navigateByUrl('/user');
       }else if(res.role==='[Admin]') {
+        sessionStorage.setItem('SESSION_USER','Admin');
         this.router.navigateByUrl('/admin');
       }
     },error=>{
