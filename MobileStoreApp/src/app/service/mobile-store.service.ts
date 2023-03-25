@@ -40,14 +40,27 @@ export class MobileStoreService {
   public updateMobileInfo(requestBody) {
     return this.http.put(hostUrl+'mobile/update',requestBody,this.createAuthHeaders(this.getSessionToken()));
   }
-
+  public addToCart(mobileId) {
+    let customerId = sessionStorage.getItem('USER_ID');
+    return this.http.post(hostUrl + 'cart/add/'+ customerId + '/' + mobileId,null,this.createAuthHeaders(this.getSessionToken()));
+  }
+  public getCartItems(){
+    let customerId = sessionStorage.getItem('USER_ID');
+    return this.http.get(hostUrl+ 'cart/mobilesincart/'+customerId, this.createAuthHeaders(this.getSessionToken()));
+  }
+  public placeOrder(requestBody){
+    return this.http.post(hostUrl + 'order/place',requestBody,this.createAuthHeaders(this.getSessionToken()));
+  }
+  public placeOrderByCartAndCustomer(customerId,cartId){
+    return this.http.post(hostUrl + 'order/placedOrderFromCart/+'+customerId +'/'+cartId,null,this.createAuthHeaders(this.getSessionToken()));
+  }
   public isUserLoggedIn() {
     return sessionStorage.getItem('SESSION_USER') === 'User';
   }
   public isAdminLoggedIn() {
     return sessionStorage.getItem('SESSION_USER') === 'Admin';
   }
-  
+
   public onLogout() {
     sessionStorage.clear();
     this.router.navigateByUrl('/');

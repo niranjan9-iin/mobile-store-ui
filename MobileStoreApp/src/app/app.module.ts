@@ -20,6 +20,7 @@ import { UserCartComponent } from './pages/user/user-cart/user-cart.component';
 import { UserOrdersComponent } from './pages/user/user-orders/user-orders.component';
 import { AddCategoryComponent } from './pages/admin/add-category/add-category.component';
 import { EditMobileInfoComponent } from './pages/admin/edit-mobile-info/edit-mobile-info.component';
+import { AddToCartComponent } from './pages/user/add-to-cart/add-to-cart.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { EditMobileInfoComponent } from './pages/admin/edit-mobile-info/edit-mob
     UserCartComponent,
     UserOrdersComponent,
     AddCategoryComponent,
-    EditMobileInfoComponent
+    EditMobileInfoComponent,
+    AddToCartComponent
   ],
   imports: [
     BrowserModule,

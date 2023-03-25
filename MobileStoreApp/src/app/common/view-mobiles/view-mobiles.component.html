@@ -22,12 +22,13 @@
                             <td>{{item?.mobileName}}</td>
                             <td>{{item?.companyName}}</td>
                             <td>{{item?.mobileRAM}} GB</td>
-                            <td>{{item?.comeraPixcel}} MegaPixels</td>
+                            <td>{{item?.cameraPixcel}} MegaPixels</td>
                             <td>{{item?.mfDate | date:'mediumDate'}}</td>
                             <td>{{item?.mobileCost | currency : "INR" : "symbol"}}</td>
                             <td>
-                                <button [hidden]="role==='admin'" class="btn btn-outline-primary">Add to cart</button>
-                                <button [hidden]="role==='user'" class="btn btn-outline-primary" (click)="editMobileInfo(item)">Edit Info</button>
+                                <app-add-to-cart *ngIf="role==='user'" [role]="role" [mobileId]="item.mobileId"></app-add-to-cart>
+                                <!-- <button [disabled]="disable" [hidden]="role==='admin'" class="btn btn-outline-primary" (click)="addMobileToCart(item.mobileId)">Add to cart</button> -->
+                                <button *ngIf="role==='admin'" class="btn btn-outline-primary" (click)="editMobileInfo(item)">Edit Info</button>
                             </td>
                         </tr>
                     </tbody>

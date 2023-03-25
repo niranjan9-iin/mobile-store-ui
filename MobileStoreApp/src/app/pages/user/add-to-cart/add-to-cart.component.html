@@ -1,0 +1,2 @@
+<button *ngIf="!disableBtn" [hidden]="role==='admin'" class="btn btn-outline-primary" (click)="addMobileToCart(mobileId)">Add to cart</button>
+<button *ngIf="disableBtn" class="btn btn-disabled" disabled>Already in cart</button>

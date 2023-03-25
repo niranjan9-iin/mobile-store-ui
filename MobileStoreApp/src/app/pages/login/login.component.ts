@@ -19,6 +19,7 @@ export class LoginComponent implements OnInit {
       sessionStorage.setItem('mobile-auth-token',res.token);
       if(res.role==='[User]'){
         sessionStorage.setItem('SESSION_USER','User');
+        sessionStorage.setItem('USER_ID',res.userId.toString());
         this.router.navigateByUrl('/user');
       }else if(res.role==='[Admin]') {
         sessionStorage.setItem('SESSION_USER','Admin');
