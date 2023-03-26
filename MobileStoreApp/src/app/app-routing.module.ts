@@ -6,6 +6,8 @@ import { AddCategoryComponent } from './pages/admin/add-category/add-category.co
 import { AdminAddMobileComponent } from './pages/admin/admin-add-mobile/admin-add-mobile.component';
 import { AdminHomeComponent } from './pages/admin/admin-home/admin-home.component';
 import { EditMobileInfoComponent } from './pages/admin/edit-mobile-info/edit-mobile-info.component';
+import { ShowAllCustomersComponent } from './pages/admin/show-all-customers/show-all-customers.component';
+import { ViewAllOrdersComponent } from './pages/admin/view-all-orders/view-all-orders.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AdminComponent } from './pages/layouts/admin/admin.component';
 import { BasicComponent } from './pages/layouts/basic/basic.component';
@@ -68,6 +70,12 @@ const routes: Routes = [{
     },{
       path: 'edit-mobile/:id',
       component: EditMobileInfoComponent
+    },{
+      path:'view-all-orders',
+      component: ViewAllOrdersComponent
+    },{
+      path:'show-all-customers',
+      component: ShowAllCustomersComponent
     }
   ]
 }];

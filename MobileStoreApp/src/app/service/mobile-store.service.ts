@@ -63,7 +63,12 @@ export class MobileStoreService {
   public isAdminLoggedIn() {
     return sessionStorage.getItem('SESSION_USER') === 'Admin';
   }
-
+  public getAllOrders() {
+    return this.http.get(hostUrl + 'admin/getAll/orders',this.createAuthHeaders(this.getSessionToken()));
+  }
+  public getAllCustomers() {
+    return this.http.get(hostUrl+'admin/allCustomer',this.createAuthHeaders(this.getSessionToken()));
+  }
   public onLogout() {
     sessionStorage.clear();
     this.router.navigateByUrl('/');
