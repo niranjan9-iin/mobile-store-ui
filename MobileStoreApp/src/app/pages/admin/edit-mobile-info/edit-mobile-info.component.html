@@ -46,7 +46,9 @@
                             <div class="col-4 mt-3">
                                 <div class="form-group">
                                     <label>RAM</label>
-                                    <input type="number" class="form-control" [(ngModel)]="mobileObject.mobileRAM" name="mobileRAM" required>
+                                    <select class="form-select" ngModel name="mobileRAM" id="" required>
+                                        <option *ngFor="let rr of RamValue" [ngValue]="rr">{{rr}}</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="col-4 mt-3">

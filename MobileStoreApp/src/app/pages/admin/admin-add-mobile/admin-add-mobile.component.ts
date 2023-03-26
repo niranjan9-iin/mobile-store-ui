@@ -10,6 +10,7 @@ import { MobileStoreService } from 'src/app/service/mobile-store.service';
 export class AdminAddMobileComponent implements OnInit {
   constructor(public service: MobileStoreService) { }
   categoryObjectList: any;
+  RamValue=[2,4,8,16];
   ngOnInit() {
     this.getAllCategories();
   }

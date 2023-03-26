@@ -29,21 +29,21 @@ export class UserCartComponent implements OnInit {
     })
   }
 
-  placeOrder(){
-    this.mobileIdsArray = this.mobilesList.map(res=>res.mobileId)
-    this.ordersRequestBody ={
-      cost:this.cartResponse.totalCost,
-      customerId:sessionStorage.getItem('USER_ID'),
-      mobilesId:this.mobileIdsArray,
-      quantity:this.cartResponse.quantity,
-      totalCost:this.cartResponse.totalCost
-    }
-    this.service.placeOrder(this.ordersRequestBody).subscribe(res=>{
-      console.log(res);
+  // placeOrder(){
+  //   this.mobileIdsArray = this.mobilesList.map(res=>res.mobileId)
+  //   this.ordersRequestBody ={
+  //     cost:this.cartResponse.totalCost,
+  //     customerId:sessionStorage.getItem('USER_ID'),
+  //     mobilesId:this.mobileIdsArray,
+  //     quantity:this.cartResponse.quantity,
+  //     totalCost:this.cartResponse.totalCost
+  //   }
+  //   this.service.placeOrder(this.ordersRequestBody).subscribe(res=>{
+  //     console.log(res);
       
-    })
+  //   })
 
-  }
+  // }
   placeOrderById(){
     this.service.placeOrderByCartAndCustomer(sessionStorage.getItem('USER_ID'),this.cartId).subscribe(res=>{
       alert('Order placed successfully, Go to Orders Page');

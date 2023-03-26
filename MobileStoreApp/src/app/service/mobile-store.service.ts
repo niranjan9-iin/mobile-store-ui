@@ -48,11 +48,14 @@ export class MobileStoreService {
     let customerId = sessionStorage.getItem('USER_ID');
     return this.http.get(hostUrl+ 'cart/mobilesincart/'+customerId, this.createAuthHeaders(this.getSessionToken()));
   }
-  public placeOrder(requestBody){
-    return this.http.post(hostUrl + 'order/place',requestBody,this.createAuthHeaders(this.getSessionToken()));
-  }
+  // public placeOrder(requestBody){
+  //   return this.http.post(hostUrl + 'order/place',requestBody,this.createAuthHeaders(this.getSessionToken()));
+  // }
   public placeOrderByCartAndCustomer(customerId,cartId){
-    return this.http.post(hostUrl + 'order/placedOrderFromCart/+'+customerId +'/'+cartId,null,this.createAuthHeaders(this.getSessionToken()));
+    return this.http.post(hostUrl + 'order/placedOrderFromCart/'+customerId +'/'+cartId,null,this.createAuthHeaders(this.getSessionToken()));
+  }
+  public getOrdersByUserId(userId){
+    return this.http.get(hostUrl + 'customer/get/order/'+userId,this.createAuthHeaders(this.getSessionToken()));
   }
   public isUserLoggedIn() {
     return sessionStorage.getItem('SESSION_USER') === 'User';

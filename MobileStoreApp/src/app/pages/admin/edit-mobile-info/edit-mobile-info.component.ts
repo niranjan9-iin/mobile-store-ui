@@ -13,6 +13,7 @@ export class EditMobileInfoComponent implements OnInit {
   mobileId
   mobileObject
   categoryObjectList: Object;
+  RamValue=[2,4,8,16];
   
   constructor(private route: ActivatedRoute, private service: MobileStoreService, private router: Router) { }
   ngOnInit(): void {
