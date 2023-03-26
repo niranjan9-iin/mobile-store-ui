@@ -1,65 +1,26 @@
-<!-- <div class="container mt-5">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="card">
-                <h3>Mobiles list</h3><hr>
-                <table class="table table-bordered">
-                    <thead>
-                        <tr class="table-primary">
-                           
-                            <th>Mobile Name</th>
-                            <th>Brand</th>
-                            <th>RAM</th>
-                            <th>Camera Specifications</th>
-                            <th>Date of Manufacture</th>
-                            <th>Price</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let item of mobilesList">
-                            
-                            <td>{{item?.mobileName}}</td>
-                            <td>{{item?.companyName}}</td>
-                            <td>{{item?.mobileRAM}} GB</td>
-                            <td>{{item?.cameraPixcel}} MegaPixels</td>
-                            <td>{{item?.mfDate | date:'mediumDate'}}</td>
-                            <td>{{item?.mobileCost | currency : "INR" : "symbol"}}</td>
-                            <td>
-                                <app-add-to-cart *ngIf="role==='user'" [role]="role" [mobileId]="item.mobileId"></app-add-to-cart>
-                                 <button [disabled]="disable" [hidden]="role==='admin'" class="btn btn-outline-primary" (click)="addMobileToCart(item.mobileId)">Add to cart</button>
-                                <button *ngIf="role==='admin'" class="btn btn-outline-primary" (click)="editMobileInfo(item)">Edit Info</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-</div> -->
 <div class="container-fluid">
     <div class="row">
         <div *ngFor="let item of mobilesList;let i=index" class="col-3">
             <div class="card m-2">
                 <div class="card-header">
                     <img [src]="item.imagePath" alt="" style="width: 150px; height: 150px;">
-                    {{item?.mobileName}}
+                    <strong>{{item?.mobileName}}</strong>
                 </div>
                 <div class="card-body">
-                    <div class="mb-2">
-                        {{item?.mobileCost | currency : "INR" : "symbol"}}
+                    <div class="mb-1">
+                       <strong>Price:</strong> {{item?.mobileCost | currency : "INR" : "symbol"}}
                     </div>
-                    <div class="mb-2">
-                        {{item?.companyName}}
+                    <div class="mb-1">
+                        <strong>Brand:</strong> {{item?.companyName}}
                     </div>
-                    <div>
-                        {{item?.cameraPixcel}} MegaPixels
+                    <div class="mb-1">
+                        <strong>Camera:</strong> {{item?.cameraPixcel}} MegaPixels
                     </div>
-                    <div>
-                        {{item?.mobileRAM}} GB RAM
+                    <div class="mb-1">
+                       <strong>RAM:</strong> {{item?.mobileRAM}} GB RAM
                     </div>
-                    <div>
-                        Manufacture Date: {{item?.mfDate | date:'mediumDate'}}
+                    <div class="mb-1">
+                        <strong>Manufacture Date:</strong> {{item?.mfDate | date:'mediumDate'}}
                     </div>
                     <app-add-to-cart *ngIf="role==='user'" [role]="role" [mobileId]="item.mobileId"></app-add-to-cart>
                     <button *ngIf="role==='admin'" class="btn btn-outline-primary" (click)="editMobileInfo(item)">Edit Info</button>
