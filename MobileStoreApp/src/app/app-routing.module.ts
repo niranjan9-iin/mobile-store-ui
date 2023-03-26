@@ -5,6 +5,7 @@ import { AuthGuard } from './guards/auth.guard';
 import { AddCategoryComponent } from './pages/admin/add-category/add-category.component';
 import { AdminAddMobileComponent } from './pages/admin/admin-add-mobile/admin-add-mobile.component';
 import { AdminHomeComponent } from './pages/admin/admin-home/admin-home.component';
+import { EditCustomerInfoComponent } from './pages/admin/edit-customer-info/edit-customer-info.component';
 import { EditMobileInfoComponent } from './pages/admin/edit-mobile-info/edit-mobile-info.component';
 import { ShowAllCustomersComponent } from './pages/admin/show-all-customers/show-all-customers.component';
 import { ViewAllOrdersComponent } from './pages/admin/view-all-orders/view-all-orders.component';
@@ -76,6 +77,10 @@ const routes: Routes = [{
     },{
       path:'show-all-customers',
       component: ShowAllCustomersComponent
+    },
+    {
+      path:'edit-customer-info/:id',
+      component: EditCustomerInfoComponent
     }
   ]
 }];

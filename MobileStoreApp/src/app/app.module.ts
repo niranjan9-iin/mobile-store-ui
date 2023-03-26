@@ -23,6 +23,7 @@ import { EditMobileInfoComponent } from './pages/admin/edit-mobile-info/edit-mob
 import { AddToCartComponent } from './pages/user/add-to-cart/add-to-cart.component';
 import { ViewAllOrdersComponent } from './pages/admin/view-all-orders/view-all-orders.component';
 import { ShowAllCustomersComponent } from './pages/admin/show-all-customers/show-all-customers.component';
+import { EditCustomerInfoComponent } from './pages/admin/edit-customer-info/edit-customer-info.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { ShowAllCustomersComponent } from './pages/admin/show-all-customers/show
     EditMobileInfoComponent,
     AddToCartComponent,
     ViewAllOrdersComponent,
-    ShowAllCustomersComponent
+    ShowAllCustomersComponent,
+    EditCustomerInfoComponent
   ],
   imports: [
     BrowserModule,

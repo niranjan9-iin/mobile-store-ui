@@ -69,6 +69,12 @@ export class MobileStoreService {
   public getAllCustomers() {
     return this.http.get(hostUrl+'admin/allCustomer',this.createAuthHeaders(this.getSessionToken()));
   }
+  public getCustomerById(custId){
+    return this.http.get(hostUrl+'customer/get/'+custId,this.createAuthHeaders(this.getSessionToken()));
+  }
+  public editUser(reqBody){
+    return this.http.put(hostUrl+'customer/edit/user',reqBody,this.createAuthHeaders(this.getSessionToken()));
+  }
   public onLogout() {
     sessionStorage.clear();
     this.router.navigateByUrl('/');
