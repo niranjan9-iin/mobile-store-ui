@@ -51,6 +51,9 @@ export class MobileStoreService {
   public deleteMobileFromCart(mobileId,cartId){
     return this.http.delete(hostUrl+'customer/mobile/'+mobileId+'/'+cartId,this.createAuthHeaders(this.getSessionToken()));
   }
+  public searchMobilesByType(searchString, type){
+    return this.http.get(hostUrl+'mobile/get/filter/search/'+searchString+'/'+type,this.createAuthHeaders(this.getSessionToken()));
+  }
   // public placeOrder(requestBody){
   //   return this.http.post(hostUrl + 'order/place',requestBody,this.createAuthHeaders(this.getSessionToken()));
   // }

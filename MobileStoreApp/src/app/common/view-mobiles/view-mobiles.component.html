@@ -1,5 +1,11 @@
 <div class="container-fluid">
     <div class="row">
+        <div class="col-12">
+            <strong>Search Mobile</strong>
+            <input [(ngModel)]="type" class="form-control" type="text" placeholder="Type" style="width: 10%;">
+            <input [(ngModel)]="value" class="form-control" type="text" placeholder="Value" style="width: 10%;">
+            <button class="btn btn-primary mt-3" (click)="searchByType()">Search</button>
+        </div>
         <div *ngFor="let item of mobilesList;let i=index" class="col-3">
             <div class="card m-2">
                 <div class="card-header">

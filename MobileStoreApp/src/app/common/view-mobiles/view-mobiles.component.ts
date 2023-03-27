@@ -12,6 +12,8 @@ export class ViewMobilesComponent implements OnInit {
   role: string
   mobilesList
   mobilesInCart: any;
+  type;
+  value;
   constructor(private service: MobileStoreService, private router:Router) { }
   disable=false;
   ngOnInit() {
@@ -26,5 +28,15 @@ export class ViewMobilesComponent implements OnInit {
   editMobileInfo(item) {
     console.log(item);
     this.router.navigate(['admin/edit-mobile', item.mobileId]);
+  }
+  searchByType(){
+    console.log(this.type,this.value);
+    this.service.searchMobilesByType(this.value,this.type).subscribe(res=>{
+console.log(res);
+this.mobilesList=res;
+    },error=>{
+      console.log(error); 
+    })
+    
   }
 }
