@@ -25,6 +25,7 @@ export class EditMyProfileComponent implements OnInit {
     const custId=Number.parseInt(this.customerId);
     ngForm.value.userId=custId;
     console.log(typeof(custId));
+    ngForm.value.password = null;
     if(regex.test(ngForm.value.mobileNumber)){
       this.service.editUser(ngForm.value).subscribe(res=>{
         alert('User updated successfully')

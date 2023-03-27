@@ -14,6 +14,7 @@ export class ShowAllCustomersComponent implements OnInit {
   ngOnInit() {
     this.service.getAllCustomers().subscribe(res=>{
       this.customerInfo = res;
+      this.customerInfo=this.customerInfo.filter(res=>res.role==='User');
     })
   }
   editUserInfo(item) {
