@@ -52,4 +52,12 @@ export class UserCartComponent implements OnInit {
       alert('Error occured while placing order');
     })
   }
+  removeFromCart(item){
+    this.service.deleteMobileFromCart(item.mobileId,this.cartId).subscribe(res=>{
+      alert('Mobile removed')
+      this.ngOnInit();
+    },error=>{
+      alert('Errror occured while remove');
+    })
+}
 }

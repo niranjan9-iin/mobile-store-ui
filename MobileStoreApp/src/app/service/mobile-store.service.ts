@@ -48,6 +48,9 @@ export class MobileStoreService {
     let customerId = sessionStorage.getItem('USER_ID');
     return this.http.get(hostUrl+ 'cart/mobilesincart/'+customerId, this.createAuthHeaders(this.getSessionToken()));
   }
+  public deleteMobileFromCart(mobileId,cartId){
+    return this.http.delete(hostUrl+'customer/mobile/'+mobileId+'/'+cartId,this.createAuthHeaders(this.getSessionToken()));
+  }
   // public placeOrder(requestBody){
   //   return this.http.post(hostUrl + 'order/place',requestBody,this.createAuthHeaders(this.getSessionToken()));
   // }
