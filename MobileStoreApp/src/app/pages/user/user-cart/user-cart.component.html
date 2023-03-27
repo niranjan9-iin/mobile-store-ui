@@ -34,7 +34,7 @@
                         Total amount: <span>{{totalAmount}}</span>
                     </div>
                     <div class="col-md-4 py-3">
-                        <button class="btn btn-primary" (click)="placeOrderById()">Place Order</button>
+                        <button [disabled]="mobilesList.length===0" class="btn btn-primary" (click)="placeOrderById()">Place Order</button>
                     </div>
                 </div>
             </div>
