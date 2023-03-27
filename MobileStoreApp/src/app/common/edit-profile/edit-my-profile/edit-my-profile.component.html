@@ -1,0 +1,61 @@
+<div class="register_page mt-4">
+    <div class="cantainer">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="card">
+                    <h3>Edit My Information</h3>
+                    <hr>
+                    <form #editCustomerForm="ngForm" (ngSubmit)="updateCustomerInfo(editCustomerForm)" [noValidate]="false">
+                        <div class="row">
+                            <div class="col-4 mt-3">
+                                <div class="form-group">
+                                    <label>Name</label>
+                                    <input type="text" class="form-control" [(ngModel)]="customerInfo.name" name="name" minlength="4" required>
+                                </div>
+                            </div>
+                            <div class="col-4 mt-3">
+                                <div class="form-group">
+                                    <label>User Name</label>
+                                    <input type="text" class="form-control" [(ngModel)]="customerInfo.username" name="username" minlength="4" required>
+                                </div>
+                            </div>
+                            <div class="col-4 mt-3">
+                                <div class="form-group">
+                                    <label>Address</label>
+                                    <input type="text" class="form-control" [(ngModel)]="customerInfo.address" name="address" required>
+                                </div>
+                            </div>
+                            <div class="col-4 mt-3">
+                                <div class="form-group">
+                                    <label>Email Address</label>
+                                    <input type="email" class="form-control" [(ngModel)]="customerInfo.emailId" name="emailId" required>
+                                </div>
+                            </div>
+                            <div class="col-4 mt-3">
+                                <div class="form-group">
+                                    <label>Password</label>
+                                    <input type="password" class="form-control" [(ngModel)]="customerInfo.password" name="password" required>
+                                </div>
+                            </div>
+                            <div class="col-4 mt-3">
+                                <div class="form-group">
+                                    <label>Mobile Number</label>
+                                    <input type="text" class="form-control" [(ngModel)]="customerInfo.mobileNumber" name="mobileNumber" required>
+                                </div>
+                            </div>                           
+                            <div class="col-4 mt-3">
+                                <div class="form-group">
+                                    <label>Select Role</label>
+                                    <select class="form-select" [(ngModel)]="customerInfo.role" name="role" placeholder="select" required>
+                                        <option *ngFor="let rol of roleList" [ngValue]="rol">{{rol}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-outline-primary mt-3">Save changes</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

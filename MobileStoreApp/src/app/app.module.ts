@@ -24,6 +24,7 @@ import { AddToCartComponent } from './pages/user/add-to-cart/add-to-cart.compone
 import { ViewAllOrdersComponent } from './pages/admin/view-all-orders/view-all-orders.component';
 import { ShowAllCustomersComponent } from './pages/admin/show-all-customers/show-all-customers.component';
 import { EditCustomerInfoComponent } from './pages/admin/edit-customer-info/edit-customer-info.component';
+import { EditMyProfileComponent } from './common/edit-profile/edit-my-profile/edit-my-profile.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { EditCustomerInfoComponent } from './pages/admin/edit-customer-info/edit
     AddToCartComponent,
     ViewAllOrdersComponent,
     ShowAllCustomersComponent,
-    EditCustomerInfoComponent
+    EditCustomerInfoComponent,
+    EditMyProfileComponent
   ],
   imports: [
     BrowserModule,

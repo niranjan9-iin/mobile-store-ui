@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { EditMyProfileComponent } from './common/edit-profile/edit-my-profile/edit-my-profile.component';
 import { AdminAuthGuard } from './guards/admin-auth.guard';
 import { AuthGuard } from './guards/auth.guard';
 import { AddCategoryComponent } from './pages/admin/add-category/add-category.component';
@@ -50,6 +51,9 @@ const routes: Routes = [{
     }, {
       path: 'orders-view',
       component: UserOrdersComponent
+    },{
+      path:'edit-my-profile',
+      component: EditMyProfileComponent
     }
   ]
 }, {
