@@ -17,4 +17,9 @@ export class UserOrdersComponent implements OnInit {
       this.orderInfo = res;
     })
   }
+  cancelOrder(item){
+    this.service.cancelOrder(item.orderId).subscribe(res=>{
+      
+    })
+  }
 }

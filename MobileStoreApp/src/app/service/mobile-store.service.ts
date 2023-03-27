@@ -81,6 +81,9 @@ export class MobileStoreService {
   public editUser(reqBody){
     return this.http.put(hostUrl+'customer/edit/user',reqBody,this.createAuthHeaders(this.getSessionToken()));
   }
+  public cancelOrder(id){
+    return this.http.delete(hostUrl+'order/delete/'+id,this.createAuthHeaders(this.getSessionToken()));
+  }
   public onLogout() {
     sessionStorage.clear();
     this.router.navigateByUrl('/');

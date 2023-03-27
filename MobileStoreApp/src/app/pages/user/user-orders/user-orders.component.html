@@ -10,7 +10,8 @@
                             <th>Quantity</th>
                             <th>Order date</th>
                             <th>Dispatch Date</th>
-                            <th>Total Cost</th>                           
+                            <th>Total Cost</th> 
+                            <th>Action</th>                          
                         </tr>
                     </thead>
                     <tbody>
@@ -20,6 +21,7 @@
                             <td>{{item?.orderDate | date:'mediumDate'}}</td>
                             <td>{{item?.dispachDate | date:'mediumDate'}}</td>
                             <td>{{item?.totalCost | currency:'INR'}}</td>
+                            <td><button class="btn btn-danger" (click)="cancelOrder(item)">Cancel Order</button></td>
                         </tr>
                     </tbody>
                 </table>
