@@ -22,12 +22,20 @@ export class EditCustomerInfoComponent implements OnInit {
   }
 
   updateCustomerInfo(ngForm: NgForm){
-    ngForm.value.userId=this.customerId;
-    this.service.editUser(ngForm.value).subscribe(res=>{
-      alert('User updated successfully')
-    },error=>{
-      alert('Error occured while updating user');
-    })
+    const regex = new RegExp('[0-9]{10}');
+    const custId=Number.parseInt(this.customerId);
+    ngForm.value.userId=custId;
+    console.log(typeof(custId));
+    if(regex.test(ngForm.value.mobileNumber)){
+      this.service.editUser(ngForm.value).subscribe(res=>{
+        alert('User updated successfully')
+      },error=>{
+        alert('Error occured while updating user');
+      })
+    }else{
+      alert('Please check mobile number');
+    }
+    
   }
 
 }
